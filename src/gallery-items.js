@@ -1,4 +1,5 @@
-export default [
+// export default
+  const gallery = [
   {
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg',
@@ -63,3 +64,28 @@ export default [
     description: 'Lighthouse Coast Sea',
   },
 ];
+
+const galleryHolder = document.querySelector('ul.js-gallery')
+
+const gallerySet = (picture) => {
+  return picture
+    .map(({ preview, original, description }) => {
+      return `
+  <li class = "gallery-list">
+  <img src="${preview}" srcset ="${original}" alt="${description}">
+  </li>
+   `;
+    })
+    .join('');
+}
+ const pictureSet = gallerySet(gallery);
+galleryHolder.insertAdjacentHTML('beforeend', pictureSet)
+galleryHolder.addEventListener('click', onGalleryClick)
+
+function onGalleryClick(e){
+  if (!e.target.classList.contains('gallery-list')) {
+    console.log(e.target)
+    return;
+  }
+  console.log(e.target)
+}
