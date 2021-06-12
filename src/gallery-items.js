@@ -1,5 +1,4 @@
-// export default
-  const galleryRef = [
+export default [
   {
     preview:
       'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg',
@@ -64,51 +63,4 @@
     description: 'Lighthouse Coast Sea',
   },
 ];
-
-const galleryHolder = document.querySelector('ul.js-gallery')
-
-const gallerySet = (picture) => {
-  return picture
-    .map(({ preview, original, description }) => {
-      return `
-  <li class = "gallery-item">
-  <a class="gallery__link" href = "${original}">
-  <img class = "gallery_image" src="${preview}" data-source ="${original}" alt="${description}">
-  </a>
-  </li>
-   `;
-    })
-    .join('');
-}
- const pictureSet = gallerySet(galleryRef);
-galleryHolder.insertAdjacentHTML('beforeend', pictureSet)
-galleryHolder.addEventListener('click', onGalleryClick)
-
-function onGalleryClick(e) {
-  const isPictuteClick = e.target.classList.contains('gallery-item')
-  if (!isPictuteClick) {
-   
-    return;
-  }
-  console.log(e.target)
-}
-
-const openModalBtn = document.querySelector('div.lightbox');
-const closeModalBtn = document.querySelector('[data-action="close-lightbox"]')
-const lightBoxImg = document.querySelector('lightbox__image')
-
-const onOpenModal = () => {
-  openModal.classList.add('is-open')
-  
-  lightBoxImg.src=`${galleryRef.original}`
-
-}
-
-openModalBtn.addEventListener('click', onOpenModal)
-
-const closeModal = () => {
-  document.body.classList.remove('is-open')
-}
-
-closeModalBtn.addEventListener('click', closeModal)
 
