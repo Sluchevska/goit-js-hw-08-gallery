@@ -64,3 +64,93 @@ export default [
   },
 ];
 
+// import galleryRef from './gallery-items.js';
+
+
+// function makeGalleryMarkup(picture) {
+//   return picture.map(({preview, original, description}) => {
+//     return `
+//     <li class="gallery__item">
+//     <a
+//     class="gallery__link"
+//     href="${original}"
+//   >
+//       <img
+//         class="gallery__image"
+//         src="${preview}"
+//         data-source="${original}"
+//         alt="${description}"
+//       />
+//     </a>
+//   </li>`
+//     }).join('');
+//     };
+  
+    
+//   const galleryHolder = document.querySelector('.js-gallery');
+//   const galleryMarkup =  createGallery(images);
+//   galleryHolder.insertAdjacentHTML('beforeend', imageMarkup);
+
+//   const openModalBtn = document.querySelector('.js-lightbox')
+//   const lightBoxImg = document.querySelector('.lightbox__image')
+  
+//   galleryHolder.addEventListener('click', onGalleryClick)
+
+//   function onGalleryClick (e) {
+//     e.preventDefault();
+
+//     const galleryImage= e.target.classList.contains('gallery__item')
+//     if (!galleryImage){
+ 
+//  openModalBtn.classList.add('is-open');
+//  lightBoxImg.src = event.target.dataset.source;
+//  lightBoxImg.alt = event.target.alt;
+
+//  window.addEventListener('keydown', onEscapeClick);
+//   }};
+
+//   const closeModalBtn = document.querySelector('[data-action="close-lightbox"]');
+
+//  closeModalBtn.addEventListener('click', onCloseModalBtn)
+//     function onCloseModalBtn () {
+//     openModal.classList.remove('is-open');
+//     changeScrImage.src = '';
+//     changeScrImage.alt = '';
+
+//     window.removeEventListener('keydown', onEscBtnClick);
+
+//   };
+
+
+
+// //дополнительно
+
+
+// const backdrop = document.querySelector('.lightbox__overlay');
+// backdrop.addEventListener('click', onBackdropClick)
+// function onBackdropClick (event) {
+//   if(event.currentTarget === event.target){
+//     onCloseModalBtn();
+//   }
+// }
+
+// function onEscBtnClick(event) {
+// if (event.code === 'Escape') {
+//   onCloseModalBtn();}
+// // } else if (event.code === 'ArrowRight' || 'ArrowLeft'){
+// //   switchImages();
+// // }
+// };
+
+// // ArrowRight ArrowLeft
+
+
+// function switchImages(event) {
+//   let slideIndex = 0;
+//   if (event.code === 'ArrowRight') {
+//     slideIndex++;
+//     console.log(slideIndex);
+//   } else if (event.code  === 'ArrowLeft') {
+//     slideIndex--;
+//   } 
+// }
